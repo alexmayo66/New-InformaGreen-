@@ -1,5 +1,7 @@
 *{ 
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
+ color: black;
 }
 
 body{
@@ -10,208 +12,492 @@ body{
 }
 
 /* HEADER */
-header{ 
-  margin:0;
-  padding: 0;
-  background-color: #fff;
-}
-
-header  img{
-  width: 60px;
-  height: 55px;
-  transition: 0.9s;
-  margin-left: 10px;
-} 
-
-header  img:hover{
-  transition: 0.5s;
-  transform: scale(1.1)
-}
-
-header  .informa{
-  margin-left: 16px;
-}
-header .nav{
-  margin-right: 15px;
-} 
-
-header .nav  .btnnav{
-  background-color: #16a592;
-  padding: 10px;
-  border-radius: 2rem;
-  margin: 10px;
-  transition: 0.5s;
-  font-weight: 200;
-}
-
-header .nav a:hover{
-  transition: 0.5s;
-  transform: scale(1.1)
-}
-
-header .nav a{
-    text-decoration: none;
-    color: white;
-}
-
-.ins {
-  color: white;
-  background-color: #047469;
-  padding: 10px; 
-  border-radius: 20px;
-}
-
-.top-page{
-  margin-top: 4rem;
-}
-/*.paraillu{
+.left-navbar {
+  display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+header {
+  display: flex;
+  background-color: white;
   justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
+  padding: 20px 20px;
+  align-items: center;
   width: 100%;
-  
-}*/
-.illu{
-  width: 350px;
-  margin-right: 50px;
+  box-sizing: border-box;
 }
-.right{
-  margin-left: 12px;
-  font-weight: 700;
+
+header img.mh {
+  height: 50px;
+  display: none; /* Cacher le menu burger par défaut */
+  z-index: 999;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
 }
-.button{
-  font-weight: normal;
-  text-decoration: none;
-  color: white;
-  background-color: #047469;
-  padding: 10px;
-  border-radius: 20px;
-}
-.title{
+
+.navlinks-container {
+  display: flex;
   justify-content: center;
-}
-.container{
-  flex-direction: row;
-  margin-top: 30px;
-  justify-content: center;
-}
-.card{
-  justify-content: space-between;
-  margin-left: 25px;
   align-items: center;
+  gap: 20px;
+}
+
+.navlinks-container a {
+  border: none;
+  background-color: #09cdb1;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navlinks-container a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.informa {
+  color: black;
+}
+
+/* Styles pour le mobile */
+.mobile-menu {
+  display: none; /* Cacher le menu sur mobile par défaut */
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  background-color: white;
+  width: 200px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 998;
+  flex-direction: column;
+}
+
+.mobile-menu a {
+  margin-bottom: 10px;
+}
+
+.mobile-menu a:hover {
+  transform: none; /* Supprime l'animation de hover dans le mobile */
+}
+
+
+
+/* Styles généraux pour la section */
+.top-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
+  flex-wrap: wrap; /* Permet d'ajuster la mise en page sur les petits écrans */
+  
+}
+
+/* Titre principal */
+h1 {
+  font-size: 50px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* Paragraphe */
+.top-page-container p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Style du bouton */
+.top-page-container a button {
+  padding: 10px 20px;
+  background-color: #047469;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.top-page-container a button:hover {
+  background-color: #035d57;
+}
+
+/* Image */
+.illu {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+
+button {
+  border: none;
+  background-color: #047469;
+  padding: 10px 5px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+button:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+#title-service {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 100px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; 
+  align-items: stretch; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 20px 20px;
+}
+
+/* Chaque carte */
+.card {
   background-color: #fff;
+  border: 1px solid #09cdb1;
   border-radius: 2em;
-  width: 20%;
-  height: 100%;
-  padding: 3%;
-  position: relative;
-  transition: 0
-}
-.lien{
-  text-decoration: none;
-  justify-content: center;
-  color: #047469;
-}
-.pm{
-  justify-content: center;
-  font-weight: bold;
-  width: 50px;
-  margin-top: 25;
-}
-.Alexandrecont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between; 
+  text-align: center;
+  padding: 20px;
+  color: #333;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 250px;
+  max-width: 300px;
+  height: 400px; 
+  flex-grow: 1;
+}
+
+/* Bouton à l'intérieur des cartes */
+.card button {
+  background-color: #047469;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card button:hover {
+  background-color: #035d57; 
+
+}
+
+.cards-container-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Effet au survol des cartes */
+.card:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+  .cards-container {
+    flex-direction: column; 
+    gap: 20px;
+  }
+}
+
+
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f3f3f3; 
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+
+.containere {
+  display: flex;
+  justify-content: center;
+  gap: 60px; 
+  flex-wrap: wrap; 
+}
+
+.Alexandrecont, .adrien {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Alexandrecont:hover, .adrien:hover {
+  transform: translateY(-10px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.moimg {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover; 
+  border: 5px solid #c7e1d9; 
+}
+
+
+.name {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #333;
+}
+
+.you  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-top: 50px;
+}
+
+.you p {
+  font-size: 20px;
+  max-width: 50%
+}
+
+/* Styles pour le footer */
+footer {
+  background-color: #047469;
+  color: white;
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Conteneur principal du footer */
+footer .footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: text;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/* Logo du footer */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 30px;
+}
+
+footer img {
+  width: 120px;
+}
+
+/* Listes du footer */
+.footer-list {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
-.moimg{
-  width: 100px;
-  gap: 30px;
-  height: auto;
-}
 
-.name{
-  margin: 0;  
-}
-.containere{
-  text-align: center;
-  margin-bottom: 50px;
-}
-.flx{
-  display:flex;
-}
-.al-it-ctn {
-  align-items:center
-}
-.al-str {
-  align-items:flex-start
-}
-.jfy-ctr {
-  justify-content:center;
-}
-.jfy-bwn{
-  justify-content:space-between;
-}
-.spa-ely {
-  justify-content:space-evenly
-}
-.flx-cln {
-  flex-direction:column;
-}
-.Pm-fx{
-  justify-content: center;
-  align-items:center;
-}
-.pmflx{
-  justify-content: center;
-  text-align: center;
+.footer-list h4 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
   font-weight: 600;
 }
-.adrienflx{
-  margin-left: 26px;
+
+.footer-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
-.youflx{
-  justify-content: center;
+
+.footer-list ul li {
+  margin-bottom: 10px;
+}
+
+/* Liens du footer */
+.footer-list a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: #c7e1d9; /* Couleur plus claire au survol */
+}
+
+/* Contact section */
+footer address {
   text-align: center;
 }
-.footerflx{
- display: flex;
-  background-color: #047469;
-  width: 100%;
-  margin-top: 80px;
-  height: auto;
+
+footer address a {
+  display: block;
+  margin-top: 5px;
   color: white;
-  padding: 5% 0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
+  font-size: 0.9em;
 }
-.logoflx{
-  margin: 0;
-  margin-left: 15px;
-  width: 60px;
+
+footer address a:hover {
+  color: #c7e1d9; 
 }
-.logocontflx img{
-  height: 50px;
-  margin-left: 25px;
+
+
+footer p {
+  position: absolute;
+  bottom: 2; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  font-size: 0.9em;
 }
-.ig{
-  margin-top: 0;
+
+
+footer a.Azrom  {
+  color: #c7e1d9; 
 }
-footer .container{
-  min-width: 1170px;
-  margin: auto;
+
+footer a.Azrom:hover {
+  text-decoration: underline;
 }
-footer ul{
-  list-style-type:none;
+footer a.nino{
+  color: white;
 }
-footer ul li a{
-   color: white;
-   text-decoration: none;
+footer a.nino:hover{
+  text-decoration: underline;
 }
-.row{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+/* Styles responsive pour les petits écrans */
+@media (max-width: 768px) {
+  footer .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+/* Responsive Design */
+
+/* Pour les écrans de moins de 992px (tablettes et petits écrans) */
+@media (max-width: 992px) {
+  .top-page-container {
+    flex-direction: column; /* Mettre les éléments en colonne */
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 40px; /* Réduire la taille du texte */
+  }
+
+  .top-page-container p {
+    font-size: 18px; /* Réduire la taille du texte pour les tablettes */
+  }
+
+  .illu {
+    margin-top: 20px; /* Ajouter de l'espace au-dessus de l'image */
+    width: 100%;
+  }
+}
+
+/* Pour les écrans de moins de 768px (téléphones) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px; 
+  }
+
+  .top-page-container p {
+    font-size: 16px;
+  }
+
+  .top-page-container a button {
+    font-size: 16px;
+  }
+
+  .navlinks-container {
+    display: none; 
+  }
+
+  header img.mh {
+    display: block; 
+  }
+
+  .footer-logo img {
+    width: 50px;
+    font-size: 20px;
+  }
+
+  .you p {
+    max-width: 100%;
+    text-align: center;
+    margin: auto 4px;
+  }
+
+  footer p {
+    width: 100%;
+    background-color: #047469;  
+  }
+
+}
+
+/* Pour les très petits écrans, moins de 480px (petits téléphones) */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px; 
+  }
+
+  .top-page-container p {
+    font-size: 14px;
+  }
+
+  .top-page-container a button {
+    font-size: 14px;
+    padding: 8px 16px; 
+  }
+}
+
+
+
+/* Animation pour montrer/masquer le menu burger */
+.show-menu {
+  display: block;
+    display: flex;
+    flex-direction: column;
 }
